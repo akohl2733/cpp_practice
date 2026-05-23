@@ -10,4 +10,8 @@ if(MSVC)
     add_compile_options(/Zc:__cplusplus)
 endif()
 
-add_executable(practice2 main.cpp)
+add_executable(practice2 
+    main.cpp
+    a.cpp
+    constants.cpp
+)
