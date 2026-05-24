@@ -1,15 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <stdexcept>
-#include <cmath>
-#include "lesson_4_1.h"
-#include "lesson_5.h"
-#include "lesson_6.h"
-#include "lesson_7.h"
-#include "constants.h"
-#include "lesson_8.h"
-#include "lesson_10.h"
+#include "calculator.h"
 
 int main()
 {
@@ -51,6 +43,42 @@ int main()
     // auto b { a };
     // const auto c { a };
     // constexpr auto d { a };
+
+    Calc::printWelcomeMessage();
+
+    std::cout << "Please enter a number: ";
+    double x{};
+    std::cin >> x;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    std::cout << "What would you like to do to " << x << "?\n";
+    std::cout << "Add (a), Subtract (s), Multiply (m), Divide (d)\n"; 
+    std::string s{};
+    std::getline(std::cin, s);
+
+    Calc::toLower(s);
+
+    bool isResOk = Calc::checkValidityOfResponse(s);
+
+    if (!isResOk) {
+        std::cout << "Please enter a valid value.";
+        return 0;
+    }
+
+    std::cout << "Please enter another number: ";
+    double y{};
+    std::cin >> y;
+
+    if (s == "s")
+        std::cout << Calc::subtract(x, y);
+    else if (s == "a")
+        std::cout << Calc::add(x, y);
+    else if (s == "m")
+        std::cout << Calc::multiply(x, y);
+    else if (s == "d")
+        std::cout << Calc::divide(x, y);
+    else
+        std::cout << "Something went wrong";
 
     return 0;
 }

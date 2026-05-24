@@ -14,4 +14,5 @@ add_executable(practice2
     main.cpp
     a.cpp
     constants.cpp
+    calculator.cpp
 )
