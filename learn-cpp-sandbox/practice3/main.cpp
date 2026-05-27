@@ -1,47 +1,57 @@
 #include <iostream>
+#include <string>
 #include "lesson_11.h"
 #include "lesson_f.h"
+#include "lesson_12.h"
 
-// #define CONSTEVAL(...) [] consteval { return __VA_ARGS__; }() 
+// #define PRINTVCAT(expr) { std::cout << #expr << " is an " << (is_lvalue(expr) ? "lvalue\n" : "rvalue\n"); }
+#define isSmall(T) ( sizeof(T) <= 2 * sizeof(void*))
 
-// void printInt(char) = delete;
-// void printInt(bool) = delete;
+struct S
+{
+    double a;
+    double b;
+    double c;
+};
+
+int getInt() { return 5; }
 
 int main() {
 
-    // std::cout << add(17, 89) << std::endl;
+    // PRINTVCAT(5);
+    // PRINTVCAT(getInt());
+    // int x {5};
+    // PRINTVCAT(x);
+    // PRINTVCAT(std::string {"Hello"});
+    // PRINTVCAT(++x);
+    // PRINTVCAT(x++);
+    // refPractice();
+    // lvalueRefToConst();
 
-
-    // printInt(56);
-    // printInt('a');
-    // printInt(97.6);
-    // printInt(true);
-
-    // defaultArgs();
-    // defArgs();
-
-    // std::cout << printVal(89.9, 80.1);
-
-    // int g = printMax<int>(10, 45);
-    // int f = printMax(static_cast<double>(10), 10.49);
-    // double f = printMax<double>(10, 10.49);
-    // auto f = max(13.55, 12);
-    // std::cout << f << "\n";
-
-    // constexpr double cirumference { calculateCirc(10) };
-    // std::cout << cirumference << std::endl;
-
-    // constexpr int x { getMax(7, 8) };
-    // std::cout << x << std::endl;
-    // std::cout << getMax(78, 90) << " should be " << 90 << std::endl;
+    // const std::string y {"Pineapple"};
+    // printValue(y);
 
     // int x{5};
-    // std::cout << compare(x, 9) << std::endl;
-    // std::cout << compare(5, 9) << std::endl;
-    // std::cout << CONSTEVAL(compare(5, 9)) << std::endl;
+    // std::cout << "The address of x is: " << &x << '\n';
+    // printAddresses(x, x);
 
-    constexpr int g { doSomething(5,6) };
-    std::cout << g << std::endl;
+    // int y { 5 };
+    // std::cout << y << "\n";
+    // addOne(y);
+    // std::cout << y << "\n";
+
+    // int x{5};
+    // const int z{10};
+
+    // printVal(x);
+    // printRef(z);
+
+    std::cout << std::boolalpha;
+    std::cout << isSmall(int) << "\n";
+
+    double d {};
+    std::cout << isSmall(d) << '\n';
+    std::cout << isSmall(S) << '\n';
 
     return 0;
 }
