@@ -1,4 +1,5 @@
 #include "lesson_15.h"
+#include "lesson_19.h"
 #include "date.h"
 
 #include <iostream>
@@ -12,7 +13,12 @@ int main()
     // d.print();
     // NestedStuff::doSomething();
     // EmployeePrint::doSomething();
-    DestructorIntro::doSomething();
-    
+    // DestructorIntro::doSomething();
+    // dynamicMemory::allocate2();
+    // dynamicMemoryArray::allocate();
+    // dynamicMemoryArray::allocate2();
+    // voidPointers::doSomething2();
+    voidPointerUse::doSomething();
+
     return 0;
 }
