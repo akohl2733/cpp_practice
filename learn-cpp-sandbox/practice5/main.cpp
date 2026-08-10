@@ -1,6 +1,8 @@
 #include "lesson_15.h"
 #include "lesson_19.h"
 #include "date.h"
+#include "objLayoutPadding.h"
+#include "destructors.h"
 
 #include <iostream>
 
@@ -18,7 +20,12 @@ int main()
     // dynamicMemoryArray::allocate();
     // dynamicMemoryArray::allocate2();
     // voidPointers::doSomething2();
-    voidPointerUse::doSomething();
+    // voidPointerUse::doSomething();
+    // structReview::doSomething();
+    // nestedStructs::doSomething();
+    // ownerVsViewer::doSomething();
+    // structSizes::doSomething();
+    // diffStructSizes::doSomething();
 
     return 0;
 }
